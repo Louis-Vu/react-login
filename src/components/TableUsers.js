@@ -10,7 +10,7 @@ const  TableUsers = (props) => {
     const [totalPages, setTotallPages] = useState(0);
 
     useEffect(()=> {
-        getUsers(2);
+        getUsers(1);
             }, []);
 
      const getUsers = async (page) => {
@@ -25,8 +25,8 @@ const  TableUsers = (props) => {
      }      
      console.log (listUsers);
 
-     const handlePageClick = () => {
-      
+     const handlePageClick = (event) => {
+        getUsers(+event.selected +1)
      }
 
     return (<>
