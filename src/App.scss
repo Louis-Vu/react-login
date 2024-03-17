@@ -19,3 +19,53 @@ code {
   justify-content: space-between;
 }
 }
+.app-container{
+  .login-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    .title{
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      padding-top: 30px;
+    }
+    .text{
+      font-weight: 600;
+      padding-bottom: 3px;
+    }
+
+    input{
+      padding: 12px 7px;
+      outline: none;
+      margin-bottom: 7px;
+      background: #1618230f;
+      border: #1618230f;
+      border-radius: 3px;
+      width: 100%;
+
+      &:hover{
+        background-color: #dedede;
+
+      }
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 3px;
+      outline: none;
+      border: none;
+
+      &:active, :hover{
+        background-color: #fe2c55;
+        color: white;
+      }
+    }
+
+    .back{
+      text-align: center;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+  }
+}
