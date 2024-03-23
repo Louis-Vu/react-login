@@ -31,6 +31,10 @@ const  TableUsers = (props) => {
       setlistUsers([ user, ...listUsers ]);
     }
 
+    const handleEditUsers = (user) => {
+        console.log("check", user)
+    }
+
     useEffect(()=> {
         getUsers(1);
             }, []);
@@ -120,7 +124,7 @@ listUsers.map((item, index) => {
         show ={isShowModalEdit}
         dataUserEdit = {dataUserEdit}
         handleClose={handleClose}
-        handleUpdateTable = {handleUpdateTable}
+        handleEditUsers = {handleEditUsers}
 
       />
     </>)

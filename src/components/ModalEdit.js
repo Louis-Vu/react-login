@@ -6,7 +6,7 @@ import { putUpdateUser } from '../services/UserService';
 
 
 const ModalEdit = (props) => {
-    const {show, handleClose, dataUserEdit} = props;
+    const {show, handleClose, dataUserEdit, handleEditUsers} = props;
     const [lastname, setlastname] = useState("")
     const [name, setName] = useState("");
     const [job, setJob] = useState("");
@@ -14,7 +14,15 @@ const ModalEdit = (props) => {
 
     const handleEditUser = async () =>{
       let res = await putUpdateUser(name, job);
-      console.log(">>> check res: ", res);
+      if (res && res.updateAt) {
+        handleEditUsers({
+          last_name: lastname ,
+          first_name: name,
+          id: dataUserEdit.id,
+          email: email,
+
+        })
+      }
     }
     useEffect(() => {
         if(show){
