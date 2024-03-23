@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { loginApi } from "../services/UserService";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner, faAngleLeft, faL } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 
 

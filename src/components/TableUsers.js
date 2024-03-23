@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import { fetchAllUser } from '../services/UserService';
 import ReactPaginate from 'react-paginate';
-import ModalAddnew from './ModalAdmin';
+import ModalAddnew from './ModalAddNew';
 import ModalEdit from './ModalEdit';
 
 
@@ -38,14 +38,12 @@ const  TableUsers = (props) => {
      const getUsers = async (page) => {
         let res = await fetchAllUser(page);
         if(res && res.data ) {
-          console.log(res)
-            setTotallUsesrs(res.total)
-            setlistUsers(res.data)
-            setTotallPages(res.total_pages)
+            setTotallUsesrs(res.total);
+            setlistUsers(res.data);
+            setTotallPages(res.total_pages);
         }
 
      }      
-     console.log (listUsers);
 
      const handlePageClick = (event) => {
         getUsers(+event.selected +1)
@@ -74,7 +72,7 @@ const  TableUsers = (props) => {
 
 listUsers.map((item, index) => {
     return (
-        <tr key={'users-${index}'}>
+        <tr key={`users-${index}`}>
           <td>{item.id}</td>
           <td>{item.email}</td>
           <td>{item.first_name}</td>
@@ -122,6 +120,8 @@ listUsers.map((item, index) => {
         show ={isShowModalEdit}
         dataUserEdit = {dataUserEdit}
         handleClose={handleClose}
+        handleUpdateTable = {handleUpdateTable}
+
       />
     </>)
 }

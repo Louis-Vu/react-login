@@ -14,7 +14,6 @@ const ModalAddnew = (props) => {
 
     const handleSaveUser = async () => {
       let res = await postCreateUser(lastname, name, job, email);
-      console.log(">>> check res: ", res);
       if(res && res.id){
         handleClose();
         setlastname('')
@@ -36,19 +35,19 @@ const ModalAddnew = (props) => {
         <Modal.Body>
           <div className='body-add-new'>
             <div>
-            <div class="mb-3">
+            <div className="mb-3">
                   <label className="form-label">Last Name</label>
                   <input type="Text" className="form-control" value={lastname}
                   onChange={(event)=> setlastname(event.target.value)} />
                   </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <label className="form-label">First Name</label>
                   <input type="Text" className="form-control" value={name}
                   onChange={(event)=> setName(event.target.value)} />
                 </div>
                 <div className="mb-3">
-                  <label for="exampleInputPassword1" className="form-label">Job</label>
-                  <input type="text" class="form-control" value={job}
+                  <label htmlFor="exampleInputPassword1" className="form-label">Job</label>
+                  <input type="text" className="form-control" value={job}
                   onChange={(event)=> setJob(event.target.value)}/>
                 </div>
                 <div className="mb-3">
