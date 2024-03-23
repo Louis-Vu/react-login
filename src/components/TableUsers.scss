@@ -1,0 +1,14 @@
+.add-new{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .group-btns{
+        display: flex;
+        gap: 5px;
+
+        i{
+            padding: 0 2px;
+        }
+    }
+  }
